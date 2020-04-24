@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <vue-headful title="Circuit Breaker Personality"/>
     <Quiz />
   </div>
 </template>

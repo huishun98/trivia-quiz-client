@@ -10,7 +10,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-headful": "^2.1.0"
   },
   "devDependencies": {
     "@vue/cli-service": "^4.3.0",
