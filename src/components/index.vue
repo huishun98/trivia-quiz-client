@@ -24,11 +24,6 @@ export default {
   },
 
   methods: {
-    // link: function() {
-    //    var currentURL=location.href;
-    //    // var currentURLascii=unescape(location.href);
-    //    console.log(currentURL)
-    // },
     restart: function() {
       this.questionIndex = 0;
       this.userResponses = Array(this.quiz.questions.length).fill(null);
@@ -68,15 +63,14 @@ export default {
       // console.log(results);
       results.result = this.shorthandResult();
 
-      axios({
-        method: "post",
-        url: APIendpoint,
-        data: results
-      })
-        .then(response => console.log(response))
-        .catch(err => console.log(`Error when sending results: ${err}`));
+      // axios({
+      //   method: "post",
+      //   url: APIendpoint,
+      //   data: results
+      // })
+      //   .then(response => console.log(response))
+      //   .catch(err => console.log(`Error when sending results: ${err}`));
     },
-    // Return "true" count in userResponses
     shorthandResult: function() {
       const collateTypes = Array.prototype.concat.apply([], this.userTypes);
 
@@ -87,7 +81,6 @@ export default {
         }
         ++result[collateTypes[i]];
       }
-
       const order = ["TWGA", "TSGW", "TPCB", "TSSW", "TCLG", "TRC"];
 
       return Object.keys(result).reduce((a, b) => {
@@ -104,20 +97,10 @@ export default {
     },
     score: function() {
       return information[this.shorthandResult()];
-      // let score = {
-      //    TWGA: 0,
-      //    TSGW: 0,
-      //    TPCB: 0,
-      //    TSSW: 0,
-      //    TCLG: 0,
-      //    TRC: 0
-      // };
-      //return this.userResponses.filter(function(val) { return val }).length;
     }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped src="../styles/index.css"></style>
 <template src="./index.html"></template>
