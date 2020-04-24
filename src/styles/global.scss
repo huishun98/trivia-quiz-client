@@ -1,0 +1,30 @@
+$trans_duration: 0.3s;
+$primary_color: #064864;
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+
+    height: 100vh;
+
+    background: $primary_color;
+
+    /* mocking native UI */
+    // cursor: default !important; /* remove text selection cursor */
+    user-select: none; /* remove text selection */
+    // user-drag: none; /* disbale element dragging */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// #app {
+//     font-family: Avenir, Helvetica, Arial, sans-serif;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//     text-align: center;
+//     color: #2c3e50;
+// }

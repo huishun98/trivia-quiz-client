@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="questionBox">
+        <div class="landingPage" v-if="questionIndex < 0">
+            <header>
+                <h1 class="title">What Circuit Breaker <br /> Personality <br /> Are You?</h1>
+            </header>
+            <div class="description">
+                <div class="buttonWrapper">
+                    <a class="button is-active" v-on:click="next();">
+                        Start Quiz
+                    </a>
+                </div>
+                <p class="remarks">Disclaimer: No personal data is collected during the process. This quiz was created
+                    in the
+                    name of fun and by no means intended to offend anybody.</p>
+            </div>
+        </div>
+
+        <!-- transition -->
+        <transition :duration="{ enter: 500, leave: 300 }" enter-active-class="animated zoomIn"
+            leave-active-class="animated zoomOut" mode="out-in">
+
+            <!--qusetionContainer-->
+            <div class="questionContainer" v-if="questionIndex<quiz.questions.length && questionIndex >= 0"
+                v-bind:key="questionIndex">
+
+                <header>
+                    <h1 class="title is-6">What Circuit Breaker Personality Are You?</h1>
+                    <!--progress-->
+                    <div class="progressContainer">
+                        <progress class="progress is-info is-small" :value="(questionIndex/quiz.questions.length)*100"
+                            max="100">{{(questionIndex/quiz.questions.length)*100}}%</progress>
+                        <p>{{(questionIndex/quiz.questions.length)*100}}% complete</p>
+                    </div>
+                    <!--/progress-->
+                </header>
+
+                <!-- questionTitle -->
+                <h2 class="titleContainer title">{{ quiz.questions[questionIndex].text }}</h2>
+
+                <!-- quizOptions -->
+                <div class="optionContainer">
+                    <div class="option" v-for="(response, index) in quiz.questions[questionIndex].responses"
+                        @click="selectOption(index)" :class="{ 'is-selected': userResponses[questionIndex] == index}"
+                        :key="index">
+                        {{ index | charIndex }}. {{ response.text }}
+                    </div>
+                </div>
+
+                <!--quizFooter: navigation and progress-->
+                <footer class="questionFooter">
+
+                    <!--pagination-->
+                    <nav class="pagination" role="navigation" aria-label="pagination">
+
+                        <!-- back button -->
+                        <!-- <a class="button" v-on:click="prev();" :class="questionIndex < 1?'disabled':''">
+                  Back
+                </a> -->
+
+                        <!-- next button -->
+                        <a :class="userResponses[questionIndex]==null?'disabled':'is-active'" class="button align-right"
+                            v-on:click="next();">
+                            Next
+                        </a>
+
+                    </nav>
+                    <!--/pagination-->
+
+                </footer>
+                <!--/quizFooter-->
+
+            </div>
+            <!--/questionContainer-->
+
+            <!--quizCompletedResult-->
+            <div v-if="quizCompleted()" v-bind:key="questionIndex"
+                class="quizCompleted has-text-centered">
+
+                <!-- quizCompletedIcon: Achievement Icon -->
+                <!-- <span class="icon">
+              <i class="fa" :class="score()>3?'fa-check-circle-o is-active':'fa-times-circle'"></i>
+            </span> -->
+                <div class="innerContainer">
+                    <h2 class="title">
+                        You are
+                    </h2>
+                    <h2 class="title">
+                        {{ score()["persona"] }}
+                    </h2>
+
+                    <!--resultTitleBlock-->
+
+                    <p class="subtitle">
+                        {{ score()["description"] }}
+                    </p>
+                    <p class="remarks">
+                        {{ score()["notes"] }}
+                    </p>
+                    <div class="buttonWrapper">
+                        <a class="button" @click="restart()">Restart Quiz<i class="fa fa-refresh"></i></a>
+                    </div>
+                    <!--/resultTitleBlock-->
+                </div>
+                <p class="subtitle">
+                    Share this quiz with your friends!
+                </p>
+                <!-- <div class="buttonWrapper">
+              <a class="button rectangle codeFont" @click="link()">Click to copy quiz link<i
+                  class="fa fa-refresh"></i></a>
+            </div> -->
+            </div>
+            <!--/quizCompetedResult-->
+
+        </transition>
+
+    </div>
+</div>
