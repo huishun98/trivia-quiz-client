@@ -69,7 +69,7 @@ export default {
         data: results
       })
         .then(response => console.log('<3'))
-        .catch(err => console.log(`Error when sending results: ${err}`));
+        .catch(err => console.log(`Error: ${err}`));
     },
     shorthandResult: function() {
       const collateTypes = Array.prototype.concat.apply([], this.userTypes);
