@@ -1,19 +1,28 @@
-# trivia-quiz-client
+# Circuit Breaker Personality Quiz
+
+## Description
+
+A personality quiz about attitudes and feelings towards about the Circuit Breaker.
+
+The live version can be found here: https://circuit-breaker-personality.herokuapp.com/.
+
+
+## Language, Frameworks and Libraries
+Built using Vue.js.
+
 
 ## Project setup
+1. Install dependencies
 ```
 npm install
 ```
+2. Open Vue UI
 
-### Compiles and hot-reloads for development
+Install Vue UI if not already installed.
 ```
-npm run serve
+npm install -g @vue/cli
 ```
-
-### Compiles and minifies for production
 ```
-npm run build
+vue ui
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+3. Follow instructions in the Vue UI to serve and open app
