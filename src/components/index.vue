@@ -63,13 +63,13 @@ export default {
       // console.log(results);
       results.result = this.shorthandResult();
 
-      // axios({
-      //   method: "post",
-      //   url: APIendpoint,
-      //   data: results
-      // })
-      //   .then(response => console.log(response))
-      //   .catch(err => console.log(`Error when sending results: ${err}`));
+      axios({
+        method: "post",
+        url: APIendpoint,
+        data: results
+      })
+        .then(response => console.log(response))
+        .catch(err => console.log(`Error when sending results: ${err}`));
     },
     shorthandResult: function() {
       const collateTypes = Array.prototype.concat.apply([], this.userTypes);
