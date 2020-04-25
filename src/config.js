@@ -55,7 +55,7 @@ const quiz = {
         {
             text: "Which scenario is the worst to you?",
             responses: [
-                { text: "WIFI down", type: ["WIFI down"] },
+                { text: "WIFI down", type: ["TCLG"] },
                 {
                     text: "Ran out of toilet paper",
                     type: ["TPCB"]

@@ -91,7 +91,7 @@ export default {
           return b;
         }
         if (result[a] == result[b]) {
-          return order.indexOf[a] < order.indexOf[b] ? a : b;
+          return order.indexOf(a) < order.indexOf(b) ? a : b;
         }
       });
     },

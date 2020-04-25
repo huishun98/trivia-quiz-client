@@ -30,7 +30,7 @@
                     <div class="progressContainer">
                         <progress class="progress is-info is-small" :value="(questionIndex/quiz.questions.length)*100"
                             max="100">{{(questionIndex/quiz.questions.length)*100}}%</progress>
-                        <p>{{(questionIndex/quiz.questions.length)*100}}% complete</p>
+                        <p>Question {{questionIndex + 1}}/{{quiz.questions.length}}</p>
                     </div>
                     <!--/progress-->
                 </header>
