@@ -68,7 +68,7 @@ export default {
         url: APIendpoint,
         data: results
       })
-        .then(response => console.log(response))
+        .then(response => console.log('<3'))
         .catch(err => console.log(`Error when sending results: ${err}`));
     },
     shorthandResult: function() {
