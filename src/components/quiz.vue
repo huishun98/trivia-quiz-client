@@ -102,5 +102,5 @@ export default {
 };
 </script>
 
-<style scoped src="../styles/index.css"></style>
-<template src="./index.html"></template>
+<style scoped src="../styles/quiz.css"></style>
+<template src="./quiz.html"></template>
