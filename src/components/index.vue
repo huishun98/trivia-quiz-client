@@ -1,7 +1,7 @@
 <script>
 import Vue from "vue";
 import axios from "axios";
-import { APIendpoint, quiz, information } from "./../config";
+import { apiEndpoint, quiz, information } from "./../config";
 
 const userResponseSkelaton = Array(quiz.questions.length).fill(null);
 const userResponseTypesSkelaton = Array(quiz.questions.length).fill(null);
@@ -65,7 +65,7 @@ export default {
 
       axios({
         method: "post",
-        url: APIendpoint,
+        url: apiEndpoint,
         data: results
       })
         .then(response => console.log('<3'))

@@ -1,4 +1,4 @@
-const APIendpoint = "https://circuit-breaker-quiz.herokuapp.com/";
+const apiEndpoint = "https://circuit-breaker-quiz.herokuapp.com/";
 
 const quiz = {
     user: "",
@@ -154,4 +154,4 @@ const information = {
     }
 }
 
-export { APIendpoint, quiz, information }
+export { apiEndpoint, quiz, information }
