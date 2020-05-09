@@ -7,7 +7,7 @@ const userResponseSkelaton = Array(quiz.questions.length).fill(null);
 const userResponseTypesSkelaton = Array(quiz.questions.length).fill(null);
 
 export default {
-  name: "HelloWorld",
+  name: "Quiz",
   data() {
     return {
       quiz: quiz,
@@ -35,7 +35,6 @@ export default {
         this.questionIndex,
         this.quiz.questions[this.questionIndex].responses[index].type
       );
-      // console.log(this.userResponses);
     },
     next: function() {
       if (this.questionIndex < this.quiz.questions.length) this.questionIndex++;
@@ -51,16 +50,11 @@ export default {
       return false;
     },
     sendResults: function() {
-      let answers = [];
-      for (let i = 0; i < this.userResponses.length; i++) {
-        answers.push();
-      }
       let results = {};
       for (let i = 0; i < quiz.questions.length; i++) {
         results[`q${i + 1}`] =
           quiz.questions[i].responses[this.userResponses[i]].text;
       }
-      // console.log(results);
       results.result = this.shorthandResult();
 
       axios({

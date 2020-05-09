@@ -12,17 +12,4 @@ Built using Vue.js.
 
 
 ## Project setup
-1. Install dependencies
-```
-npm install
-```
-2. Open Vue UI
-
-Install Vue UI if not already installed.
-```
-npm install -g @vue/cli
-```
-```
-vue ui
-```
-3. Follow instructions in the Vue UI to serve and open app
+1. Run the file `start_ui.sh`.
