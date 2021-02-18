@@ -26,6 +26,7 @@
                     <progress class="progress is-info is-small" :value="(questionIndex/quiz.questions.length)*100"
                         max="100">{{(questionIndex/quiz.questions.length)*100}}%</progress>
                     <p>Question {{questionIndex + 1}}/{{quiz.questions.length}}</p>
+                    <p>{{selectedType}}</p>
                 </div>
                 <!--/progress-->
             </header>
@@ -49,9 +50,9 @@
                 <nav class="pagination" role="navigation" aria-label="pagination">
 
                     <!-- back button -->
-                    <!-- <a class="button" v-on:click="prev();" :class="questionIndex < 1?'disabled':''">
-                  Back
-                </a> -->
+                    <a class="button" v-on:click="prev();" :class="questionIndex < 1?'disabled':''">
+                        Back
+                    </a>
 
                     <!-- next button -->
                     <a :class="userResponses[questionIndex]==null?'disabled':'is-active'" class="button align-right"

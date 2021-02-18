@@ -14,7 +14,9 @@ export default {
       questionIndex: -1,
       userResponses: userResponseSkelaton,
       userTypes: userResponseTypesSkelaton,
-      isActive: false
+      isActive: false,
+
+      selectedType: ""
     };
   },
   filters: {
@@ -35,6 +37,7 @@ export default {
         this.questionIndex,
         this.quiz.questions[this.questionIndex].responses[index].type
       );
+      this.selectedType = this.score().persona
     },
     next: function() {
       if (this.questionIndex < this.quiz.questions.length) this.questionIndex++;
@@ -66,7 +69,12 @@ export default {
         .catch(err => console.log(`Error: ${err}`));
     },
     shorthandResult: function() {
-      const collateTypes = Array.prototype.concat.apply([], this.userTypes);
+      let collateTypes = Array.prototype.concat.apply([], this.userTypes);
+      collateTypes = collateTypes.filter(function (el) {
+        return el != null;
+      });
+
+      console.log({collateTypes})
 
       let result = {};
       for (let i = 0; i < collateTypes.length; i++) {
