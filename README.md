@@ -1,6 +1,6 @@
 # Circuit Breaker Personality Quiz
 
-## Description
+![Web view](https://github.com/huishun98/trivia-quiz-client/blob/master/assets/screenshot.png)
 
 A personality quiz about attitudes and feelings towards about the Circuit Breaker.
 
